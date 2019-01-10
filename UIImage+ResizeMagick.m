@@ -142,7 +142,7 @@ static CGInterpolationQuality _interpolationQuality = kCGInterpolationNone;
 
 - (UIImage *) drawImageInBounds: (CGRect) bounds
 {
-    UIGraphicsBeginImageContextWithOptions(bounds.size, NO, 0.0);
+    UIGraphicsBeginImageContextWithOptions(bounds.size, NO, 1.0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetInterpolationQuality(context, _interpolationQuality);
     [self drawInRect: bounds];
@@ -153,7 +153,7 @@ static CGInterpolationQuality _interpolationQuality = kCGInterpolationNone;
 
 - (UIImage*) croppedImageWithRect: (CGRect) rect {
 
-	UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
+	UIGraphicsBeginImageContextWithOptions(rect.size, NO, 1.0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetInterpolationQuality(context, _interpolationQuality);
     CGRect drawRect = CGRectMake(-rect.origin.x, -rect.origin.y, self.size.width, self.size.height);
